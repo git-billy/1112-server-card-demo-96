@@ -32,6 +32,7 @@ app.use("/users", usersRouter);
 
 app.use("/card_96", cardRouter_96);
 app.use("/card2_96", card2Router_96);
+app.use("/api", card2Router_96);
 app.use("/api/card2_96", card2ApiRouter_96);
 
 // catch 404 and forward to error handler
