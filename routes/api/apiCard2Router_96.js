@@ -5,15 +5,12 @@ const db = require("../../utils/database");
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
-  let RESULTS;
-
   try {
-    RESULTS = await db.query("SELECT * FROM card_96", []);
+    const results = await db.query("SELECT * FROM card_96", []);
+    res.json(results.rows);
   } catch (error) {
     console.log(error);
   }
-
-  res.json(RESULTS.rows);
 });
 
 module.exports = router;
