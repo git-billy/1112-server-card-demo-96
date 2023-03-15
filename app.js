@@ -4,6 +4,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+const cors = require("cors");
+
 const db = require("./utils/database");
 // const testDB = require("./utils/test-db");
 
@@ -13,7 +15,7 @@ var usersRouter = require("./routes/users");
 const cardRouter_96 = require("./routes/card_96");
 const card2Router_96 = require("./routes/card2_96");
 
-const card2ApiRouter_96 = require('./routes/api/apiCard2Router_96');
+const card2ApiRouter_96 = require("./routes/api/apiCard2Router_96");
 
 var app = express();
 
@@ -26,6 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
