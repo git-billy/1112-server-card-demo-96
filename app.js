@@ -8,6 +8,7 @@ const cors = require("cors");
 
 const db = require("./utils/database");
 // const testDB = require("./utils/test-db");
+// const testDB = require('./utils/midterm_test_96');
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -16,6 +17,9 @@ const cardRouter_96 = require("./routes/card_96");
 const card2Router_96 = require("./routes/card2_96");
 
 const card2ApiRouter_96 = require("./routes/api/apiCard2Router_96");
+
+const apiMidtermRouter_96 = require('./routes/api/apiMidtermRouter_96');
+const apiMidprepRouter_96 = require('./routes/api/apiMidprepRouter_96');
 
 var app = express();
 
@@ -37,6 +41,10 @@ app.use("/users", usersRouter);
 app.use("/card_96", cardRouter_96);
 app.use("/card2_96", card2Router_96);
 app.use("/api/card2_96", card2ApiRouter_96);
+
+// MID EXAM
+app.use('/api/mid_96', apiMidtermRouter_96);
+app.use('/api/midprep_96', apiMidprepRouter_96);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
