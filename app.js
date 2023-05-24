@@ -20,6 +20,7 @@ const card2ApiRouter_96 = require("./routes/api/apiCard2Router_96");
 
 const apiMidtermRouter_96 = require('./routes/api/apiMidtermRouter_96');
 const apiMidprepRouter_96 = require('./routes/api/apiMidprepRouter_96');
+const apiMenuRouter_96 = require('./routes/api/apiMenuRouter_96');
 
 var app = express();
 
@@ -45,6 +46,7 @@ app.use("/api/card2_96", card2ApiRouter_96);
 // MID EXAM
 app.use('/api/mid_96', apiMidtermRouter_96);
 app.use('/api/midprep_96', apiMidprepRouter_96);
+app.use('/api/node_menu_96', apiMenuRouter_96);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
